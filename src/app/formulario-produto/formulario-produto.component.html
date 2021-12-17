@@ -1,0 +1,83 @@
+
+<div class="container " style="border: 1px solid rgb(226, 152, 55); background-color: rgba(0, 0, 0, 0.068); width: 80%; border-radius: 3%;" >
+
+<div style="margin-top: 3%; margin-bottom: 3%;">
+
+  <form
+    class="needs-validation"
+    novalidate
+    [formGroup]="form"
+    style="padding-top: 10px"
+
+  >
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="nome" style="color: chocolate;">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Nome"
+            formControlName="nome"
+            [ngClass]="{'is-invalid' : submitted && hasError('nome')}"
+          />
+          <div class="invalid-feedback" *ngIf="hasError('nome') && hasError('nome')!['required']">O nome é obrigatório</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Preço" style="color: chocolate;">Preço</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Preço"
+            placeholder="Preço"
+            formControlName="preco"
+            [ngClass]="{'is-invalid' : submitted && hasError('preco')}"
+          />
+          <div class="invalid-feedback" *ngIf="hasError('preco') && hasError('preco')!['required']">O preço é obrigatório</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-5 mb-3">
+          <label for="Descrição" style="color: chocolate;">Descrição</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Descrição"
+            placeholder="Descrição"
+            formControlName="descricao"
+            [ngClass]="{'is-invalid' : submitted && hasError('descricao')}"
+          />
+          <div class="invalid-feedback" *ngIf="hasError('descricao') && hasError('descricao')!['required']">A descrição é obrigatória</div>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="Urlimagen" style="color: chocolate;">Url da imagen</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Urlimagen"
+            placeholder="Url da imagen"
+            formControlName="urlImagen"
+            [ngClass]="{'is-invalid' : submitted && hasError('urlImagen')}"
+          />
+          <div class="invalid-feedback" *ngIf="hasError('urlImagen') && hasError('urlImagen')!['required']">A url é obrigatória</div>
+        </div>
+      </div>
+      <div style="margin-top: 10px">
+        <button type="submit" class="btn btn-primary" (click)="salvar()">salvar</button>
+        <button type="button" class="btn btn-default" style="margin-left: 5px" (click)="cancelar()">
+          cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+</div>
+
+
+
+
+

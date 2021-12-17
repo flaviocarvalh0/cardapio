@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="produtos; else loading">
+    <div class="col" *ngFor="let produto of produtos">
+      <div class="card h-100">
+        <img src="{{ produto.urlImagen }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['produto', produto.id]">{{ produto.nome }}</a>
+          </h5>
+          <h5 style="color: chocolate;" >R${{ produto.preco }}</h5>
+          <p class="card-text">{{ produto.descricao }}</p>
+        </div>
+        <hr/>
+        <footer
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 4%;
+
+          "
+
+        >
+          <button
+            class="btn btn-outline-primary btn-sm"
+            (click)="editarProduto(produto.id)"
+          >
+            editar
+          </button>
+          <button
+            class="btn btn-outline-warning btn-sm"
+            (click)="removerProduto(produto)"
+          >
+            excluir
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="d-flex align-items-center justify-content-center">
+      <strong>Loading...</strong>
+      <div class="spinner-border " style="margin-left: 10px;" role="status" aria-hidden="true"></div>
+    </div>
+  </ng-template>
+</div>
