@@ -1,0 +1,74 @@
+{
+  "produto": [
+    {
+      "id": 7,
+      "nome": "Steak Burguer",
+      "preco": "13,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina dshhsdghsgd sdsdhghsgdhs dhbsahdbsd artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/BHFZZ3l.jpg"
+    },
+    {
+      "id": 8,
+      "nome": "Steak House",
+      "preco": "17,00",
+      "descricao": "Pão brioche, 2x smash de carne, ",
+      "urlImagen": "https://i.imgur.com/9uOQ0rR.jpg"
+    },
+    {
+      "id": 9,
+      "nome": "Chicken Burguer",
+      "preco": "13,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina dshhsdghsgd sdsdhghsgdhs dhbsahdbsd artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/XtXXYU3.jpg"
+    },
+    {
+      "id": 10,
+      "nome": "Chicken Texano",
+      "preco": "17,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/yi706hl.jpg"
+    },
+    {
+      "id": 11,
+      "nome": "Big Cheddar Bacon ",
+      "preco": "22,00",
+      "descricao": "\"Pão de brioche, carne artesanal de 150g, crispy de cebola, bacon, queijo prato, maionese de alho.\"",
+      "urlImagen": "https://i.imgur.com/mGk78AZ.jpg"
+    },
+    {
+      "id": 12,
+      "nome": "Bacon Crispy",
+      "preco": "18,00",
+      "descricao": "\"Pão de brioche, carne artesanal de 150g, crispy de cebola, bacon, queijo prato, maionese de alho.\"",
+      "urlImagen": "https://i.imgur.com/vZ5Dv5a.jpg"
+    },
+    {
+      "id": 13,
+      "nome": "Double cheddar",
+      "preco": "15,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/eiRsb49.jpg"
+    },
+    {
+      "id": 14,
+      "nome": "Pickles Burguer",
+      "preco": "18,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/44q6PQj.jpg"
+    },
+    {
+      "id": 15,
+      "nome": "Tropical Burguer",
+      "preco": "18,00",
+      "descricao": "\"Pão de brioche, carne artesanal de 150g, crispy de cebola, bacon, queijo prato, maionese de alho.\"",
+      "urlImagen": "https://i.imgur.com/0JdaWOt.jpg"
+    },
+    {
+      "id": 16,
+      "nome": "Texas Burguer",
+      "preco": "17,00",
+      "descricao": "\"pão de brioche, 3x smash de carne bovina artesanal, 6x cheddar, 3x bacon, maionese de alho, barbecue.\"",
+      "urlImagen": "https://i.imgur.com/akvT4sN.jpg"
+    }
+  ]
+}
