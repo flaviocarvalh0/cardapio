@@ -1,0 +1,12 @@
+.container{
+  background-image: url(https://blogger.googleusercontent.com/img/a/AVvXsEi3DD0hNYdtXLjWU2A1T_2KonVaYRvESPEfpnA7bFfMrke67sLOtRKkCFkrVIkvhdurIKo9LmYhphCWmDkK0_atcheecUTG341JjvDO7BDrgrQicdmL_XnG1DkA6PA3kY51T_vHdi4ZeaLN9YIDm2AePHEBjIugChdZjj0vT2t3FcU8ozfZbcF9KXDMLw=s16000);
+  background-size: contain;
+
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 2%;
+}
+
+
