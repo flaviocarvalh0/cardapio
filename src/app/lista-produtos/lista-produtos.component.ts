@@ -19,9 +19,13 @@ export class ListaProdutosComponent implements OnInit {
     private router: Router
   ) {}
 
+
+  // pagigina inicial onde cotem os tens e inicializamos o metodo q criamos a baixo para pegar os produtos
   ngOnInit(): void {
     this.getProduto();
   }
+
+  //metodo q usamos para capturar os produtos do nosso serviço
 
   getProduto() {
     this.produtoService.getProduto().subscribe((produto: Produto[]) => {
@@ -29,10 +33,14 @@ export class ListaProdutosComponent implements OnInit {
     });
   }
 
+
+  // capturando o id do produto em caso de edição e enviando o msm para o formulario com o id do msm
   editarProduto(id: number) {
     this.router.navigate(['editar', id]);
   }
 
+
+  //metodo para excluir um produto 
   removerProduto(produto: any) {
     let con = confirm('Deseja excluir  ' + `${produto.nome}`)
     if(con){

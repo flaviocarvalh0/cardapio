@@ -19,17 +19,17 @@ export class DetalhesProdutoComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  // iniciando o metodo q criamos abaixo para pegar um tem por id
   ngOnInit(): void {
     this.getProdutoPorId();
   }
 
+  
   getProdutoPorId() {
-    this.inscricao = this.route.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       this.produtoService.getProdutoPorId(params['id']).subscribe((produto) => {
         this.produto = produto;
       });
     });
   }
-
-
 }

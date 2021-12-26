@@ -22,6 +22,7 @@ export class FormularioProdutoComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  //usando um formulario reativo inicializamos ele assim q for aberto a rota, iniciando os valores como nulos em caso de novot item
   ngOnInit(): void {
     this.form = this.fb.group({
       id: [null],
@@ -31,6 +32,7 @@ export class FormularioProdutoComponent implements OnInit {
       urlImagen: [null, [Validators.required]],
     });
 
+    // em caso de edição de um item usamos as rotas e capturamos o id da mesma usando edicao/:id
     this.route.params.subscribe((params) => {
       const id = params['id'];
       console.log(id);
@@ -42,6 +44,8 @@ export class FormularioProdutoComponent implements OnInit {
   }
 
   salvar() {
+
+    //nesse metodo verificamos se o formulario esta nulo ou ja vem com id em caso de nulo ele ira criar um novo produto se ñ for nulo era atualizado
 
     this.submitted = true;
     if (this.form.valid) {
@@ -72,6 +76,7 @@ export class FormularioProdutoComponent implements OnInit {
     }
   }
 
+  // metodo para capturar os dados em caso de atualização
   atualizarFormulario(produto: any) {
     this.form.patchValue({
       id: produto.id,
@@ -81,6 +86,8 @@ export class FormularioProdutoComponent implements OnInit {
       urlImagen: produto.urlImagen,
     });
   }
+
+  // metodo para cancelar a atualização ou salvamento
 
   cancelar() {
     let con = confirm("Deseja cencaler a operação?")
@@ -92,6 +99,7 @@ export class FormularioProdutoComponent implements OnInit {
     }
   }
 
+  // metodo de validaçõa de formulario
   hasError(fild: any) {
     return this.form.get(fild)?.errors;
   }

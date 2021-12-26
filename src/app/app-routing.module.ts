@@ -5,7 +5,7 @@ import { ListaProdutosComponent } from './lista-produtos/lista-produtos.componen
 import { FormularioProdutoComponent } from './formulario-produto/formulario-produto.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
+
 
 const routes: Routes = [
   {path: '', component: CardapioComponent},

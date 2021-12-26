@@ -1,14 +1,15 @@
+import { environment } from './../../environments/environment.prod';
 import { Produto } from './produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable } from 'rxjs';
-import { ThrowStmt } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProdutoService {
-  url = 'http://localhost:3000/produto';
+  url = "https://jsonplaceholder.typicode.com/comments";
 
   //criando um observable de um Produto q é um array dele msm retornamos uma chamada http get passando o array de produtos e a url
   getProduto(): Observable<Produto[]> {
@@ -18,6 +19,7 @@ export class ProdutoService {
       );
   }
 
+    //Aqui capturamos um item pelo id especifico passando um id como parametro usamos um observable de tipo qualquer passamos a url + o id
   getProdutoPorId(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`);
   }
