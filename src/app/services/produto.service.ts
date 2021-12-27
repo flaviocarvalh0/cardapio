@@ -9,7 +9,7 @@ import { delay, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProdutoService {
-  url = "https://jsonplaceholder.typicode.com/comments";
+  url = environment.API;
 
   //criando um observable de um Produto q é um array dele msm retornamos uma chamada http get passando o array de produtos e a url
   getProduto(): Observable<Produto[]> {
