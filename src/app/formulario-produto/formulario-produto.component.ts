@@ -13,7 +13,8 @@ import { Observable } from 'rxjs';
 export class FormularioProdutoComponent implements OnInit {
   submitted!: boolean;
   form!: FormGroup;
-
+  produto!: Produto;
+  edit: any;
 
   constructor(
     private fb: FormBuilder,
@@ -24,14 +25,17 @@ export class FormularioProdutoComponent implements OnInit {
 
   //usando um formulario reativo inicializamos ele assim q for aberto a rota, iniciando os valores como nulos em caso de novot item
   ngOnInit(): void {
+    this.produto = new Produto();
     this.form = this.fb.group({
       id: [null],
       nome: [null, [Validators.required]],
       preco: [null, [Validators.required]],
       descricao: [null, [Validators.required]],
       urlImagen: [null, [Validators.required]],
+
     });
 
+    this.edit = this.form.value.id;
     // em caso de edição de um item usamos as rotas e capturamos o id da mesma usando edicao/:id
     this.route.params.subscribe((params) => {
       const id = params['id'];
@@ -50,26 +54,29 @@ export class FormularioProdutoComponent implements OnInit {
     this.submitted = true;
     if (this.form.valid) {
 
-      if (this.form.value.id) {
+
+      this.form.value.id == this.edit;
+
+      if ( this.form.value.id ) {
         this.produtoService
           .atualizarProduto(this.form.value)
           .subscribe((success) => {
-            let con = confirm( 'Deseja atualizar o produto?')
+            let con = confirm( `Deseja atualizar o ${this.form.value.nome}`)
             if(con!){
 
-              this.router.navigate(['']);
+              this.router.navigate(['edicao']);
             }
           });
       } else {
-        let con = confirm("Deseja salvar esse produto?")
+        let con = confirm(`Deseja salvar ${this.form.value.nome}?`)
 
         if(con){
-
+          this.form.value.id = 0;
           this.produtoService
             .criarProduto(this.form.value)
             .subscribe((success) => {
               alert('Produto salvo com sucesso');
-              this.router.navigate(['']);
+              this.router.navigate(['edicao']);
             });
         }
       }
@@ -95,7 +102,7 @@ export class FormularioProdutoComponent implements OnInit {
 
       this.submitted = false;
       this.form.reset();
-      this.router.navigate([''])
+      this.router.navigate(['edicao'])
     }
   }
 

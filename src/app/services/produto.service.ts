@@ -1,6 +1,6 @@
 import { environment } from './../../environments/environment.prod';
 import { Produto } from './produto';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable } from 'rxjs';
 
@@ -10,10 +10,21 @@ import { delay, Observable } from 'rxjs';
 })
 export class ProdutoService {
   url = environment.API;
+  url2 = environment.API2;
+
+
+
 
   //criando um observable de um Produto q é um array dele msm retornamos uma chamada http get passando o array de produtos e a url
   getProduto(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.url)
+    .pipe(
+      delay(1000)
+      );
+  }
+
+  getProdutoCategoria(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.url2)
     .pipe(
       delay(1000)
       );
@@ -29,8 +40,10 @@ export class ProdutoService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  criarProduto(produto: any) {
-    return this.http.post(this.url, produto);
+  criarProduto(produto: Produto): Observable<Produto> {
+    console.log(produto);
+    debugger;
+    return this.http.post<Produto>(this.url, JSON.stringify(produto),this.httpOptions);
   }
 
   editaProduto(id: number) {
@@ -48,5 +61,8 @@ export class ProdutoService {
     return this.criarProduto(produto);
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  }
   constructor(private http: HttpClient) {}
 }

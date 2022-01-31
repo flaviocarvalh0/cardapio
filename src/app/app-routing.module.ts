@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'editar/:id', component: FormularioProdutoComponent },
   { path: 'novo', component: FormularioProdutoComponent },
   { path: 'edicao', component: ListaProdutosComponent },
+  { path: 'categoria/:id', component: FormularioProdutoComponent}
 ];
 
 @NgModule({
